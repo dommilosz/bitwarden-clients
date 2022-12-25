@@ -402,7 +402,7 @@ export class StateService<
     const account = await this.getAccount(
       this.reconcileOptions(options, await this.defaultOnDiskOptions())
     );
-    return account?.profile?.hasPremiumPersonally;
+    return account?.profile?.hasPremiumPersonally || true;
   }
 
   async setHasPremiumPersonally(value: boolean, options?: StorageOptions): Promise<void> {
